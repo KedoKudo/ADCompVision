@@ -13,6 +13,19 @@ git checkout -q $OPENCV_VERSION
 mkdir build
 cd build
 # Remove the Install prefix flag to install to /usr/local/lib
-cmake  -DWITH_OPENMP=OFF -DWITH_TBB=OFF -DWITH_IPP=OFF -DCMAKE_BUILD_TYPE=Release -DBUILD_EXAMPLES=OFF -DBUILD_DOCS=OFF -DBUILD_PERF_TESTS=OFF -DBUILD_TESTS=OFF -DBUILD_UNIT_TESTS=OFF -DCMAKE_INSTALL_PREFIX=../../os/$EPICS_ARCH ..
+cmake  \
+    -D WITH_OPENMP=OFF \
+    -D WITH_TBB=OFF    \
+    -D WITH_IPP=OFF    \
+    -D WITH_CUDA=OFF   \
+    -D CMAKE_BUILD_TYPE=Release \
+    -D BUILD_EXAMPLES=OFF \
+    -D BUILD_DOCS=OFF \
+    -D BUILD_PERF_TESTS=OFF \
+    -D BUILD_TESTS=OFF \
+    -D BUILD_UNIT_TESTS=OFF \
+    -D CMAKE_INSTALL_PREFIX=../../os/$EPICS_ARCH \
+    ..
+
 make -j 8
 make install
