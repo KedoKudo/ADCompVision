@@ -14,16 +14,8 @@ mkdir build
 cd build
 # Remove the Install prefix flag to install to /usr/local/lib
 cmake  \
-    -D WITH_OPENMP=OFF \
-    -D WITH_TBB=OFF    \
-    -D WITH_IPP=OFF    \
     -D WITH_CUDA=OFF   \
     -D CMAKE_BUILD_TYPE=Release \
-    -D BUILD_EXAMPLES=OFF \
-    -D BUILD_DOCS=OFF \
-    -D BUILD_PERF_TESTS=OFF \
-    -D BUILD_TESTS=OFF \
-    -D BUILD_UNIT_TESTS=OFF \
     -D CMAKE_INSTALL_PREFIX=../../os/$EPICS_ARCH \
     ..
 
